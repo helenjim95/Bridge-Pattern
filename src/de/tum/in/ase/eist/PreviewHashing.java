@@ -2,8 +2,8 @@ package de.tum.in.ase.eist;
 
 public class PreviewHashing extends Hashing {
     private SimpleHashAlgorithm simpleHashAlgorithm;
-    public PreviewHashing(HashFunction hashFunction) {
-        super(hashFunction);
+    public PreviewHashing() {
+        super();
         simpleHashAlgorithm = new SimpleHashAlgorithm();
     }
 
