@@ -5,8 +5,8 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class EnterpriseHashing extends Hashing {
-    public EnterpriseHashing(HashFunction hashFunction) {
-        super(hashFunction);
+    public EnterpriseHashing() {
+        super();
     }
 
     @Override

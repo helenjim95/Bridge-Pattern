@@ -1,8 +1,8 @@
 package de.tum.in.ase.eist;
 
 public class PreviewHashing extends Hashing {
-    public PreviewHashing(HashFunction hashFunction) {
-        super(hashFunction);
+    public PreviewHashing() {
+        super();
     }
 
     @Override

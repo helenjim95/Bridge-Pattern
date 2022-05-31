@@ -2,11 +2,14 @@ package de.tum.in.ase.eist;
 
 public abstract class Hashing implements HashFunction {
 
-    private HashFunction hashFunction;
-
-    public Hashing(HashFunction hashFunction) {
-        this.hashFunction = hashFunction;
+    public Hashing() {
+        HashFunction hashFunction = new HashFunction() {
+            @Override
+            public String calculateHashCode(String input) {
+                return input;
+            }
+        };
     }
-
     public abstract String hashDocument(String string);
+
 }
