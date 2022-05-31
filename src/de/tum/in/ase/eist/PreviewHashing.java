@@ -1,9 +1,9 @@
 package de.tum.in.ase.eist;
 
 public class PreviewHashing extends Hashing {
-    SimpleHashAlgorithm simpleHashAlgorithm;
-    public PreviewHashing() {
-        super();
+    private SimpleHashAlgorithm simpleHashAlgorithm;
+    public PreviewHashing(HashFunction hashFunction) {
+        super(hashFunction);
         simpleHashAlgorithm = new SimpleHashAlgorithm();
     }
 
@@ -14,8 +14,8 @@ public class PreviewHashing extends Hashing {
 
     @Override
     public String calculateHashCode(String input) throws IllegalArgumentException {
-        final int upper_limit = 1000;
-        if (input.length() > upper_limit) {
+        final int upperLimit = 1000;
+        if (input.length() > upperLimit) {
             throw new IllegalArgumentException();
         } else {
             return simpleHashAlgorithm.calculateHashCode(input);
