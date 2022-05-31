@@ -5,9 +5,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class EnterpriseHashing extends Hashing {
-    Hashing hashing;
-    CryptoSecureHashAlgorithm cryptoSecureHashAlgorithm = new CryptoSecureHashAlgorithm();
-
     public EnterpriseHashing() {
         super();
     }
@@ -19,6 +16,7 @@ public class EnterpriseHashing extends Hashing {
 
     @Override
     public String calculateHashCode(String input) {
+        CryptoSecureHashAlgorithm cryptoSecureHashAlgorithm = new CryptoSecureHashAlgorithm();
         return cryptoSecureHashAlgorithm.calculateHashCode(input);
     }
 }

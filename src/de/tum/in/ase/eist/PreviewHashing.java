@@ -1,9 +1,6 @@
 package de.tum.in.ase.eist;
 
 public class PreviewHashing extends Hashing {
-    Hashing hashing;
-    SimpleHashAlgorithm simpleHashAlgorithm = new SimpleHashAlgorithm();
-
     public PreviewHashing() {
         super();
     }
@@ -18,6 +15,7 @@ public class PreviewHashing extends Hashing {
         if (input.length() > 1000) {
             throw new IllegalArgumentException();
         } else {
+            SimpleHashAlgorithm simpleHashAlgorithm = new SimpleHashAlgorithm();
             return simpleHashAlgorithm.calculateHashCode(input);
         }
     }
