@@ -11,7 +11,7 @@ public class PreviewHashing extends Hashing {
     }
 
     @Override
-    public String calculateHashCode(String input) {
+    public String calculateHashCode(String input) throws IllegalArgumentException {
         if (input.length() > 1000) {
             throw new IllegalArgumentException();
         } else {

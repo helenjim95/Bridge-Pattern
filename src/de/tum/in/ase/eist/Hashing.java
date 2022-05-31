@@ -4,5 +4,5 @@ public abstract class Hashing implements HashFunction {
     public Hashing(){
     }
 
-    abstract String hashDocument(String string);
+    public abstract String hashDocument(String string);
 }
