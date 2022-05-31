@@ -5,9 +5,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public final class ExamSystem {
-	PreviewHashing previewHashing;
-	EnterpriseHashing enterpriseHashing;
-	static Hashing hashing;
+	private PreviewHashing previewHashing;
+	private EnterpriseHashing enterpriseHashing;
+	private static Hashing hashing;
+	private static HashFunction hashFunction;
 	private ExamSystem() {
 	}
 
@@ -21,7 +22,7 @@ public final class ExamSystem {
 		String file2 = readFile("exams/long_exam.txt");  //This file is too big for Preview Hashing
 
 		// TODO 6: Change SimpleHash to PreviewHashing - done
-		Hashing simpleHash = new PreviewHashing();
+		Hashing simpleHash = new PreviewHashing(hashFunction);
 
 		System.out.println(hashFile(file1, simpleHash));
 		try {
@@ -32,7 +33,7 @@ public final class ExamSystem {
 		}
 
 		// TODO 6: Change CryptoSecureHashAlgorithm to EnterpriseHashing - done
-		Hashing cryptoSecureHash = new EnterpriseHashing();
+		Hashing cryptoSecureHash = new EnterpriseHashing(hashFunction);
 
 		System.out.println(hashFile(file1, cryptoSecureHash));
 		System.out.println(hashFile(file2, cryptoSecureHash));
