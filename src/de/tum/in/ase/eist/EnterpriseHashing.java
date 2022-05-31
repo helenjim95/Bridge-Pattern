@@ -1,9 +1,5 @@
 package de.tum.in.ase.eist;
 
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-
 public class EnterpriseHashing extends Hashing {
     private CryptoSecureHashAlgorithm cryptoSecureHashAlgorithm;
     public EnterpriseHashing() {

@@ -5,10 +5,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public final class ExamSystem {
-	private PreviewHashing previewHashing;
-	private EnterpriseHashing enterpriseHashing;
-	private static Hashing hashing;
-	private static HashFunction hashFunction;
 	private ExamSystem() {
 	}
 
