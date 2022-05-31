@@ -5,7 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public final class ExamSystem {
-	PreviewHashing previewHasing;
+	PreviewHashing previewHashing;
 	EnterpriseHashing enterpriseHashing;
 	static Hashing hashing;
 	private ExamSystem() {
