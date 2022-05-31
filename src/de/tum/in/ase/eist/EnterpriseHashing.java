@@ -1,10 +1,9 @@
 package de.tum.in.ase.eist;
 
 public class EnterpriseHashing extends Hashing {
-    private CryptoSecureHashAlgorithm cryptoSecureHashAlgorithm;
+    private CryptoSecureHashAlgorithm cryptoSecureHashAlgorithm = new CryptoSecureHashAlgorithm();;
     public EnterpriseHashing() {
         super();
-        cryptoSecureHashAlgorithm = new CryptoSecureHashAlgorithm();
     }
 
     @Override

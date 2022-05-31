@@ -13,19 +13,9 @@ public final class ExamSystem {
 		return hashing.calculateHashCode(document);
 	}
 
-	public static void main(String[] args) throws IOException {
-		String file1;
-		String file2;
-		try {
-			file1 = readFile("exams/short_exam.txt");
-		} catch (RuntimeException e) {
-			throw new RuntimeException("Cannot read short exam file!");
-		}
-		try {
-			file2 = readFile("exams/long_exam.txt");  //This file is too big for Preview Hashing
-		} catch (RuntimeException e) {
-			throw new RuntimeException("Cannot read short exam file!");
-		}
+	public static void main(String[] args) throws IllegalArgumentException {
+		String file1 = readFile("exams/short_exam.txt");
+		String file2 = readFile("exams/long_exam.txt");  //This file is too big for Preview Hashing
 
 		// TODO 6: Change SimpleHash to PreviewHashing - done
 		Hashing simpleHash = new PreviewHashing();
@@ -45,9 +35,13 @@ public final class ExamSystem {
 		System.out.println(hashFile(file2, cryptoSecureHash));
 	}
 
-	public static String readFile(String filepath) throws IOException {
+	public static String readFile(String filepath) throws RuntimeException {
 		Path path = Path.of(filepath);
 		// TODO 4: Return the content of the passed file as a String - done
-		return Files.readString(path);
+		try {
+			return Files.readString(path);
+		} catch (IOException e) {
+			throw new RuntimeException("Cannot read exam file!");
+		}
 	}
 }
