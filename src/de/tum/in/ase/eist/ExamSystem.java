@@ -5,7 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public final class ExamSystem {
-	PreviewHasing previewHasing;
+	PreviewHashing previewHasing;
 	EnterpriseHashing enterpriseHashing;
 	static Hashing hashing;
 	private ExamSystem() {
@@ -21,7 +21,7 @@ public final class ExamSystem {
 		String file2 = readFile("exams/long_exam.txt");  //This file is too big for Preview Hashing
 
 		// TODO 6: Change SimpleHash to PreviewHashing - done
-		Hashing simpleHash = new PreviewHasing(hashing);
+		Hashing simpleHash = new PreviewHashing(hashing);
 
 		System.out.println(hashFile(file1, simpleHash));
 		try {

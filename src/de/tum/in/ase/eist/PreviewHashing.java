@@ -1,13 +1,9 @@
 package de.tum.in.ase.eist;
 
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-
-public class PreviewHasing extends Hashing {
+public class PreviewHashing extends Hashing {
     SimpleHashAlgorithm simpleHashAlgorithm = new SimpleHashAlgorithm();
 
-    public PreviewHasing(Hashing hashing) {
+    public PreviewHashing(Hashing hashing) {
         super(hashing);
     }
 

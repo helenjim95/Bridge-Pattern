@@ -7,7 +7,6 @@ public abstract class Hashing implements HashFunction {
         this.hashFunction = hashFunction;
     }
 
-    //TODO: add this function
     public String hashDocument(String string) {
         return string;
     }
