@@ -6,6 +6,9 @@ public class PreviewHashing extends Hashing {
     }
 
     @Override
+    public void getImplementation(){}
+
+    @Override
     public String hashDocument(String string) {
         return string;
     }

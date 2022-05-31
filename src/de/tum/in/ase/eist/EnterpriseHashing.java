@@ -10,10 +10,12 @@ public class EnterpriseHashing extends Hashing {
     }
 
     @Override
+    public void getImplementation(){}
+
+    @Override
     public String hashDocument(String string) {
         return string;
     }
-
     @Override
     public String calculateHashCode(String input) {
         CryptoSecureHashAlgorithm cryptoSecureHashAlgorithm = new CryptoSecureHashAlgorithm();
