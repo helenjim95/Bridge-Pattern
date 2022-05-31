@@ -1,10 +1,11 @@
 package de.tum.in.ase.eist;
 
 public class PreviewHashing extends Hashing {
+    Hashing hashing;
     SimpleHashAlgorithm simpleHashAlgorithm = new SimpleHashAlgorithm();
 
-    public PreviewHashing(Hashing hashing) {
-        super(hashing);
+    public PreviewHashing() {
+        super();
     }
 
     @Override

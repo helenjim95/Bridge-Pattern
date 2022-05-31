@@ -5,10 +5,11 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class EnterpriseHashing extends Hashing {
+    Hashing hashing;
     CryptoSecureHashAlgorithm cryptoSecureHashAlgorithm = new CryptoSecureHashAlgorithm();
 
-    public EnterpriseHashing(Hashing hashing) {
-        super(hashing);
+    public EnterpriseHashing() {
+        super();
     }
 
     @Override
