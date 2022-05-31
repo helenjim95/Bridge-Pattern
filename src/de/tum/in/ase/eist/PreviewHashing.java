@@ -1,12 +1,11 @@
 package de.tum.in.ase.eist;
 
 public class PreviewHashing extends Hashing {
+    SimpleHashAlgorithm simpleHashAlgorithm;
     public PreviewHashing() {
         super();
+        simpleHashAlgorithm = new SimpleHashAlgorithm();
     }
-
-    @Override
-    public void getImplementation(){}
 
     @Override
     public String hashDocument(String string) {
@@ -19,7 +18,6 @@ public class PreviewHashing extends Hashing {
         if (input.length() > upper_limit) {
             throw new IllegalArgumentException();
         } else {
-            SimpleHashAlgorithm simpleHashAlgorithm = new SimpleHashAlgorithm();
             return simpleHashAlgorithm.calculateHashCode(input);
         }
     }
