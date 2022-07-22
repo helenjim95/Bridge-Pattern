@@ -19,7 +19,8 @@ public final class ExamSystem {
 		String file2 = readFile("exams/long_exam.txt");  //This file is too big for Preview Hashing
 
 		// 6: Change SimpleHash to PreviewHashing - done
-		Hashing previewHashing = new PreviewHashing();
+		SimpleHashAlgorithm simpleHashAlgorithm = new SimpleHashAlgorithm();
+		Hashing previewHashing = new PreviewHashing(simpleHashAlgorithm);
 
 		System.out.println(hashFile(file1, previewHashing));
 		try {
@@ -30,7 +31,8 @@ public final class ExamSystem {
 		}
 
 		// 6: Change CryptoSecureHashAlgorithm to EnterpriseHashing - done
-		Hashing enterpriseHashing = new EnterpriseHashing();
+		CryptoSecureHashAlgorithm cryptoSecureHashAlgorithm = new CryptoSecureHashAlgorithm();
+		Hashing enterpriseHashing = new EnterpriseHashing(cryptoSecureHashAlgorithm);
 
 		System.out.println(hashFile(file1, enterpriseHashing));
 		System.out.println(hashFile(file2, enterpriseHashing));

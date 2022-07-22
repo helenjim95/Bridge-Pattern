@@ -3,12 +3,15 @@ package de.tum.in.ase.eist;
 public abstract class Hashing implements HashFunction {
     private HashFunction implementation;
 
-    public Hashing() {
+    public Hashing(HashFunction implementation) {
+        this.implementation = implementation;
     }
 
     public abstract String hashDocument(String string);
 
-    public abstract String calculateHashCode(String input);
+    public String calculateHashCode(String input) {
+        return implementation.calculateHashCode(input);
+    }
 
     public HashFunction getImplementation() {
         try {
