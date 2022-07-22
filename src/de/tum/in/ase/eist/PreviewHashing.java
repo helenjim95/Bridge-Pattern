@@ -2,9 +2,9 @@ package de.tum.in.ase.eist;
 
 public class PreviewHashing extends Hashing {
 
-    private final HashFunction implementation = new SimpleHashAlgorithm();
+    private final HashFunction implementation;
     public PreviewHashing() {
-        super();
+        this.implementation = new SimpleHashAlgorithm();
     }
 
     @Override

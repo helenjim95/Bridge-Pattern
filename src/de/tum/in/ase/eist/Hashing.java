@@ -9,10 +9,10 @@ public abstract class Hashing implements HashFunction {
     public abstract String hashDocument(String string);
 
     public String calculateHashCode(String input) {
-        if (implementation instanceof SimpleHashAlgorithm) {
+        if (this.implementation instanceof SimpleHashAlgorithm) {
             HashFunction simpleHashAlgorithm = new SimpleHashAlgorithm();
             return simpleHashAlgorithm.calculateHashCode(input);
-        } else if (implementation instanceof CryptoSecureHashAlgorithm) {
+        } else if (this.implementation instanceof CryptoSecureHashAlgorithm) {
             HashFunction cryptoSecureHashAlgorithm = new CryptoSecureHashAlgorithm();
             return cryptoSecureHashAlgorithm.calculateHashCode(input);
         } else {

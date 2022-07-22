@@ -2,9 +2,9 @@ package de.tum.in.ase.eist;
 
 public class EnterpriseHashing extends Hashing {
 
-    private final HashFunction implementation = new CryptoSecureHashAlgorithm();
+    private final HashFunction implementation;
     public EnterpriseHashing() {
-        super();
+        this.implementation = new CryptoSecureHashAlgorithm();
     }
 
     @Override
