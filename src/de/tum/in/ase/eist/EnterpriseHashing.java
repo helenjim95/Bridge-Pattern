@@ -3,7 +3,7 @@ package de.tum.in.ase.eist;
 public class EnterpriseHashing extends Hashing {
 
     private final HashFunction implementation = new CryptoSecureHashAlgorithm();
-    public EnterpriseHashing() {}
+    public EnterpriseHashing() { }
 
     @Override
     public String hashDocument(String string) {
