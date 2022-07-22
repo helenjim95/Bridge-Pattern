@@ -18,21 +18,21 @@ public final class ExamSystem {
 		String file2 = readFile("exams/long_exam.txt");  //This file is too big for Preview Hashing
 
 		// 6: Change SimpleHash to PreviewHashing - done
-		Hashing simpleHash = new PreviewHashing();
+		Hashing previewHashing = new PreviewHashing();
 
-		System.out.println(hashFile(file1, simpleHash));
+		System.out.println(hashFile(file1, previewHashing));
 		try {
-			System.out.println(hashFile(file2, simpleHash));
+			System.out.println(hashFile(file2, previewHashing));
 			throw new IllegalStateException("Hashing this file with preview hashing should not work!");
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 		}
 
 		// 6: Change CryptoSecureHashAlgorithm to EnterpriseHashing - done
-		Hashing cryptoSecureHash = new EnterpriseHashing();
+		Hashing enterpriseHashing = new EnterpriseHashing();
 
-		System.out.println(hashFile(file1, cryptoSecureHash));
-		System.out.println(hashFile(file2, cryptoSecureHash));
+		System.out.println(hashFile(file1, enterpriseHashing));
+		System.out.println(hashFile(file2, enterpriseHashing));
 	}
 
 	public static String readFile(String filepath) throws RuntimeException {
