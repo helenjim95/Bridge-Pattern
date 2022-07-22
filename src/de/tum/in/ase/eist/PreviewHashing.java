@@ -2,8 +2,7 @@ package de.tum.in.ase.eist;
 
 public class PreviewHashing extends Hashing {
 
-    private String implementation = "SimpleHashAlgorithm";
-    private SimpleHashAlgorithm simpleHashAlgorithm = new SimpleHashAlgorithm();
+    private final HashFunction implementation = new SimpleHashAlgorithm();
     public PreviewHashing() {
         super();
     }
@@ -19,12 +18,12 @@ public class PreviewHashing extends Hashing {
         if (input.length() > upperLimit) {
             throw new IllegalArgumentException();
         } else {
-            return simpleHashAlgorithm.calculateHashCode(input);
+            return implementation.calculateHashCode(input);
         }
     }
 
     @Override
-    public String getImplementation() {
+    public HashFunction getImplementation() {
         try {
             return implementation;
         } catch (IllegalArgumentException e) {

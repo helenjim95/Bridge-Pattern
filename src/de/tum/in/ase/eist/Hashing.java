@@ -1,24 +1,22 @@
 package de.tum.in.ase.eist;
 
 public abstract class Hashing implements HashFunction {
-    private String implementation;
+    private HashFunction implementation;
     public Hashing() { }
 
-    public String hashDocument(String string) {
-        String output = "";
-        if (implementation.equals("SimpleHashAlgorithm")) {
-            PreviewHashing previewHashing = new PreviewHashing();
-            output = previewHashing.hashDocument(string);
-        } else if (implementation.equals("CryptoSecureHashAlgorithm")) {
-            EnterpriseHashing enterpriseHashing = new EnterpriseHashing();
-            output = enterpriseHashing.hashDocument(string);
-        }
-        return output;
-    }
+    public abstract String hashDocument(String string);
     @Override
     public String calculateHashCode(String input) {
-        return input;
+        String hashCode = "";
+        if (implementation.equals("PreviewHashing")) {
+            SimpleHashAlgorithm simpleHashAlgorithm = new SimpleHashAlgorithm();
+            hashCode = simpleHashAlgorithm.calculateHashCode(input);
+        } else if (implementation.equals("EnterpriseHashing")) {
+            CryptoSecureHashAlgorithm cryptoSecureHashAlgorithm = new CryptoSecureHashAlgorithm();
+            hashCode = cryptoSecureHashAlgorithm.calculateHashCode(input);
+        }
+        return hashCode;
     }
-    public String getImplementation() { return implementation; }
+    public HashFunction getImplementation() { return implementation; }
 
 }
