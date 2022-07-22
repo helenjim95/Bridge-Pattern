@@ -10,8 +10,7 @@ public final class ExamSystem {
 
 	// 5: Change signature, make use of the bridge pattern - done
 	public static String hashFile(String document, Hashing hashing) {
-		HashFunction hashFunction = hashing.getImplementation();
-		return hashFunction.calculateHashCode(document);
+		return hashing.getImplementation().calculateHashCode(document);
 	}
 
 	public static void main(String[] args) throws IllegalArgumentException {
@@ -19,8 +18,7 @@ public final class ExamSystem {
 		String file2 = readFile("exams/long_exam.txt");  //This file is too big for Preview Hashing
 
 		// 6: Change SimpleHash to PreviewHashing - done
-		SimpleHashAlgorithm simpleHashAlgorithm = new SimpleHashAlgorithm();
-		Hashing previewHashing = new PreviewHashing(simpleHashAlgorithm);
+		Hashing previewHashing = new PreviewHashing();
 
 		System.out.println(hashFile(file1, previewHashing));
 		try {
@@ -31,8 +29,7 @@ public final class ExamSystem {
 		}
 
 		// 6: Change CryptoSecureHashAlgorithm to EnterpriseHashing - done
-		CryptoSecureHashAlgorithm cryptoSecureHashAlgorithm = new CryptoSecureHashAlgorithm();
-		Hashing enterpriseHashing = new EnterpriseHashing(cryptoSecureHashAlgorithm);
+		Hashing enterpriseHashing = new EnterpriseHashing();
 
 		System.out.println(hashFile(file1, enterpriseHashing));
 		System.out.println(hashFile(file2, enterpriseHashing));

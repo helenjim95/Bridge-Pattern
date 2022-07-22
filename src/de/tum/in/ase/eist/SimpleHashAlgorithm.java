@@ -4,7 +4,6 @@ public class SimpleHashAlgorithm implements HashFunction {
 
 	private static final int SIMPLE_HASH_MAXIMUM = 255;
 	private static final int HEXADECIMAL = 16;
-
 	private int maxLength;
 
 	public SimpleHashAlgorithm() {
