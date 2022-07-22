@@ -1,6 +1,8 @@
 package de.tum.in.ase.eist;
 
 public class PreviewHashing extends Hashing {
+
+    private String implementation = "SimpleHashAlgorithm";
     private SimpleHashAlgorithm simpleHashAlgorithm = new SimpleHashAlgorithm();
     public PreviewHashing() {
         super();
@@ -19,5 +21,15 @@ public class PreviewHashing extends Hashing {
         } else {
             return simpleHashAlgorithm.calculateHashCode(input);
         }
+    }
+
+    @Override
+    public String getImplementation() {
+        try {
+            return implementation;
+        } catch (IllegalArgumentException e) {
+            System.out.println("IllegalArgumentException");
+        }
+        return implementation;
     }
 }

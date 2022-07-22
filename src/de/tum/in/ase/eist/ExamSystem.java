@@ -8,7 +8,7 @@ public final class ExamSystem {
 	private ExamSystem() {
 	}
 
-	// TODO 5: Change signature, make use of the bridge pattern - done
+	// 5: Change signature, make use of the bridge pattern - done
 	public static String hashFile(String document, Hashing hashing) {
 		return hashing.calculateHashCode(document);
 	}
@@ -17,7 +17,7 @@ public final class ExamSystem {
 		String file1 = readFile("exams/short_exam.txt");
 		String file2 = readFile("exams/long_exam.txt");  //This file is too big for Preview Hashing
 
-		// TODO 6: Change SimpleHash to PreviewHashing - done
+		// 6: Change SimpleHash to PreviewHashing - done
 		Hashing simpleHash = new PreviewHashing();
 
 		System.out.println(hashFile(file1, simpleHash));
@@ -28,7 +28,7 @@ public final class ExamSystem {
 			e.printStackTrace();
 		}
 
-		// TODO 6: Change CryptoSecureHashAlgorithm to EnterpriseHashing - done
+		// 6: Change CryptoSecureHashAlgorithm to EnterpriseHashing - done
 		Hashing cryptoSecureHash = new EnterpriseHashing();
 
 		System.out.println(hashFile(file1, cryptoSecureHash));
@@ -37,7 +37,7 @@ public final class ExamSystem {
 
 	public static String readFile(String filepath) throws RuntimeException {
 		Path path = Path.of(filepath);
-		// TODO 4: Return the content of the passed file as a String - done
+		// 4: Return the content of the passed file as a String - done
 		try {
 			return Files.readString(path);
 		} catch (IOException e) {
