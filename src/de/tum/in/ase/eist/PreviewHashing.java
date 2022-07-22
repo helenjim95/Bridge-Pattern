@@ -3,9 +3,7 @@ package de.tum.in.ase.eist;
 public class PreviewHashing extends Hashing {
 
     private final HashFunction implementation = new SimpleHashAlgorithm();
-    public PreviewHashing() {
-        super();
-    }
+    public PreviewHashing() {}
 
     @Override
     public String hashDocument(String string) {
