@@ -9,15 +9,22 @@ public abstract class Hashing implements HashFunction {
     public abstract String hashDocument(String string);
 
     public String calculateHashCode(String input) {
-        return implementation.calculateHashCode(input);
+        if (implementation instanceof SimpleHashAlgorithm) {
+            HashFunction simpleHashAlgorithm = new SimpleHashAlgorithm();
+            return simpleHashAlgorithm.calculateHashCode(input);
+        } else if (implementation instanceof CryptoSecureHashAlgorithm) {
+            HashFunction cryptoSecureHashAlgorithm = new CryptoSecureHashAlgorithm();
+            return cryptoSecureHashAlgorithm.calculateHashCode(input);
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
 
     public HashFunction getImplementation() {
         try {
             return implementation;
         } catch (IllegalArgumentException e) {
-            System.out.println("IllegalArgumentException");
+            throw new IllegalArgumentException();
         }
-        return implementation;
     }
 }
