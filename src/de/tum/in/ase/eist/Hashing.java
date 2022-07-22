@@ -6,10 +6,8 @@ public abstract class Hashing implements HashFunction {
     }
 
     public abstract String hashDocument(String string);
-    @Override
-    public String calculateHashCode(String input) {
-        return implementation.calculateHashCode(input);
-    }
+
+    public abstract String calculateHashCode(String input);
     public HashFunction getImplementation() { return implementation; }
 
 }

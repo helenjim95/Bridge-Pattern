@@ -10,7 +10,8 @@ public final class ExamSystem {
 
 	// 5: Change signature, make use of the bridge pattern - done
 	public static String hashFile(String document, Hashing hashing) {
-		return hashing.calculateHashCode(document);
+		HashFunction hashFunction = hashing.getImplementation();
+		return hashFunction.calculateHashCode(document);
 	}
 
 	public static void main(String[] args) throws IllegalArgumentException {
