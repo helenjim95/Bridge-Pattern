@@ -7,15 +7,7 @@ public abstract class Hashing implements HashFunction {
     public abstract String hashDocument(String string);
     @Override
     public String calculateHashCode(String input) {
-        String hashCode = "";
-        if (implementation.equals("PreviewHashing")) {
-            SimpleHashAlgorithm simpleHashAlgorithm = new SimpleHashAlgorithm();
-            hashCode = simpleHashAlgorithm.calculateHashCode(input);
-        } else if (implementation.equals("EnterpriseHashing")) {
-            CryptoSecureHashAlgorithm cryptoSecureHashAlgorithm = new CryptoSecureHashAlgorithm();
-            hashCode = cryptoSecureHashAlgorithm.calculateHashCode(input);
-        }
-        return hashCode;
+        return implementation.calculateHashCode(input);
     }
     public HashFunction getImplementation() { return implementation; }
 
