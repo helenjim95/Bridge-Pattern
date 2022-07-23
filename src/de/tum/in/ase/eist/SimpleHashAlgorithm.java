@@ -20,5 +20,4 @@ public class SimpleHashAlgorithm implements HashFunction {
 		}
 		return Integer.toString(hash % maxLength, HEXADECIMAL);
 	}
-
 }

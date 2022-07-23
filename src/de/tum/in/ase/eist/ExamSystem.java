@@ -18,7 +18,7 @@ public final class ExamSystem {
 		String file1 = readFile("exams/short_exam.txt");
 		String file2 = readFile("exams/long_exam.txt");  //This file is too big for Preview Hashing
 
-		// 6: Change SimpleHash to PreviewHashing - done
+		// TODO: 6: Implement methods from Concrete Abstraction class
 		Hashing previewHashing = new PreviewHashing();
 		HashFunction simpleHashAlgorithm = new SimpleHashAlgorithm();
 		previewHashing.setImplementation(simpleHashAlgorithm);
@@ -31,7 +31,7 @@ public final class ExamSystem {
 			e.printStackTrace();
 		}
 
-		// 6: Change CryptoSecureHashAlgorithm to EnterpriseHashing - done
+		// TODO: 6: Implement methods from Concrete Abstraction class
 		Hashing enterpriseHashing = new EnterpriseHashing();
 		HashFunction cryptoSecureHashAlgorithm = new CryptoSecureHashAlgorithm();
 		enterpriseHashing.setImplementation(cryptoSecureHashAlgorithm);
@@ -42,7 +42,6 @@ public final class ExamSystem {
 
 	public static String readFile(String filepath) throws RuntimeException {
 		Path path = Path.of(filepath);
-		// 4: Return the content of the passed file as a String - done
 		try {
 			return Files.readString(path);
 		} catch (IOException e) {
