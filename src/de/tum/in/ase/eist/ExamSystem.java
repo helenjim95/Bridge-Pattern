@@ -4,11 +4,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+// TODO: Client class
 public final class ExamSystem {
 	private ExamSystem() {
 	}
 
-	// 5: Change signature, make use of the bridge pattern - done
+	// TODO: 5: delegate method calls to the abstraction class
 	public static String hashFile(String document, Hashing hashing) {
 		return hashing.calculateHashCode(document);
 	}
@@ -19,6 +20,8 @@ public final class ExamSystem {
 
 		// 6: Change SimpleHash to PreviewHashing - done
 		Hashing previewHashing = new PreviewHashing();
+		HashFunction simpleHashAlgorithm = new SimpleHashAlgorithm();
+		previewHashing.setImplementation(simpleHashAlgorithm);
 
 		System.out.println(hashFile(file1, previewHashing));
 		try {
@@ -30,6 +33,8 @@ public final class ExamSystem {
 
 		// 6: Change CryptoSecureHashAlgorithm to EnterpriseHashing - done
 		Hashing enterpriseHashing = new EnterpriseHashing();
+		HashFunction cryptoSecureHashAlgorithm = new CryptoSecureHashAlgorithm();
+		enterpriseHashing.setImplementation(cryptoSecureHashAlgorithm);
 
 		System.out.println(hashFile(file1, enterpriseHashing));
 		System.out.println(hashFile(file2, enterpriseHashing));

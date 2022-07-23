@@ -1,5 +1,6 @@
 package de.tum.in.ase.eist;
 
+//TODO: Concrete implementation class
 public class SimpleHashAlgorithm implements HashFunction {
 
 	private static final int SIMPLE_HASH_MAXIMUM = 255;
