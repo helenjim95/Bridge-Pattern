@@ -9,11 +9,7 @@ public class EnterpriseHashing extends Hashing {
 
     @Override
     public String hashDocument(String string) {
-        return string;
-    }
-    @Override
-    public String calculateHashCode(String input) {
-        return implementation.calculateHashCode(input);
+        return this.getImplementation().calculateHashCode(string);
     }
 
     @Override

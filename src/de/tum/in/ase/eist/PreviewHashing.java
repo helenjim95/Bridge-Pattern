@@ -3,36 +3,21 @@ package de.tum.in.ase.eist;
 // TODO: Concrete abstraction class
 public class PreviewHashing extends Hashing {
 
-//  TODO: Reference of the implementation class
-    private final HashFunction implementation;
+    private static final int MAX_LENGTH = 1000;
 
+    //  TODO: Reference of the implementation class
 //    TODO: initiate implementation class
     public PreviewHashing() {
-        this.implementation = new SimpleHashAlgorithm();
+        this.setImplementation(new SimpleHashAlgorithm());
     }
 
     @Override
     public String hashDocument(String string) {
-        final int upperLimit = 1000;
-        if (string.length() > upperLimit) {
+        if (string.length() > MAX_LENGTH) {
             throw new IllegalArgumentException();
         } else {
-            return string;
+            return this.getImplementation().calculateHashCode(string);
         }
     }
 
-    @Override
-    public String calculateHashCode(String input) {
-            return implementation.calculateHashCode(input);
-    }
-
-    @Override
-    public HashFunction getImplementation() {
-        try {
-            return implementation;
-        } catch (IllegalArgumentException e) {
-            System.out.println("IllegalArgumentException");
-        }
-        return implementation;
-    }
 }
