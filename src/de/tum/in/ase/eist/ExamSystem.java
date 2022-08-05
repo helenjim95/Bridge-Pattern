@@ -12,7 +12,7 @@ public final class ExamSystem {
 	}
 
 	// TODO: 5: delegate method calls to the abstraction class
-	public static String hashFile(String document) {
+	public static String hashFile(String document, Hashing hashGenerator) {
 		return hashGenerator.hashDocument(document);
 	}
 
@@ -22,17 +22,17 @@ public final class ExamSystem {
 
 		// TODO: 6: Implement methods from Concrete Abstraction class
 		hashGenerator = new PreviewHashing();
-		System.out.println(hashFile(file1));
+		System.out.println(hashFile(file1, hashGenerator));
 		try {
-			System.out.println(hashFile(file2));
+			System.out.println(hashFile(file2, hashGenerator));
 			throw new IllegalStateException("Hashing this file with preview hashing should not work!");
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 		}
 		// TODO: 6: Implement methods from Concrete Abstraction class
 		hashGenerator = new EnterpriseHashing();
-		System.out.println(hashFile(file1));
-		System.out.println(hashFile(file2));
+		System.out.println(hashFile(file1, hashGenerator));
+		System.out.println(hashFile(file2, hashGenerator));
 	}
 
 	public static String readFile(String filepath) throws RuntimeException {
